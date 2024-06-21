@@ -9,7 +9,7 @@ import { GoogleAuthProvider } from '@angular/fire/auth';
 export class AuthService {
 
   constructor( private fireAuth : AngularFireAuth, private router : Router ) { }
-
+/*
   // login method
   login(email : string, password  : string){
     this.fireAuth.signInWithEmailAndPassword(email, password).then( (res) => {
@@ -23,6 +23,19 @@ export class AuthService {
       this.router.navigate(['/home']); 
     })
   }
+*/
+  login(email: string, password: string): boolean {
+    // Implement actual authentication logic here
+    if (email === 'Kalyani@gmail.com' && password === 'Meeta') {
+      alert('Login Successful');
+              this.router.navigate(['dashboard']);
+      } else {
+        alert('Login unSuccessful');
+        this.router.navigate(['/home']);
+      }
+      return true;
+    }
+    
 
   // register method
   register(email: string, password: string){
@@ -70,7 +83,7 @@ googleSignIn() {
   }
 
   isLoggedIn(): boolean {
-    return !!localStorage.getItem('token'); // Cambia esto según cómo almacenes el estado de autenticación
+    return !!localStorage.getItem('token'); 
   }
 
 }
