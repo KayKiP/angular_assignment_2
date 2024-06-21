@@ -24,17 +24,18 @@ export class AuthService {
     })
   }
 */
-  login(email: string, password: string): boolean {
-    // Implement actual authentication logic here
-    if (email === 'Kalyani@gmail.com' && password === 'Meeta') {
-      alert('Login Successful');
-              this.router.navigate(['dashboard']);
-      } else {
-        alert('Login unSuccessful');
-        this.router.navigate(['/home']);
-      }
-      return true;
-    }
+login(email: string, password: string): boolean {
+  // Implement actual authentication logic here
+  if (email === 'Kalyani@gmail.com' && password === 'Angular') {
+    alert('Login Successful');
+    this.router.navigate(['/dashboard']);
+    return true;
+  } else {
+    alert('Login Unsuccessful');
+    this.router.navigate(['/home']);
+    return false;
+  }
+}
     
 
   // register method
